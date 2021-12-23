@@ -1,0 +1,14 @@
+<div *ngIf="comments">
+  <ngb-accordion
+    *ngFor="let appComment of comments"
+    #acc="ngbAccordion"
+    activeIds="ngb-panel-0"
+  >
+    <ngb-panel [title]="getTitle(appComment)">
+      <ng-template ngbPanelContent>
+        {{ appComment.body }}
+        <app-comments-tree *ngIf="appComment.children" [comments]="appComment.children"></app-comments-tree>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

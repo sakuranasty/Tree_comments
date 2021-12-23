@@ -1,0 +1,3 @@
+<ng-container *ngIf="comments$ | async as comments">
+  <app-comments-tree [comments]="comments"></app-comments-tree>
+</ng-container>
